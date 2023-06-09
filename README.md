@@ -43,3 +43,22 @@ Also, notice that the NIST PSTAR stopping power differs in shape from Padovani's
 Now that I (mostly) trust my numerical integration code that computes $R(E)$ from $L(E)$, I apply it to Padovani's $L(E)$. The plot below shows the result, along with the NIST PSTAR range (scaled arbitrarily for good by-eye-agreement). Remember that $L(E)$ from Padovani has units of $10^{-16} \mbox{eV cm}^2$, so the integral of $dE/L(E)$ has units of $10^{-16} cm^{-2}$. It's not a physical range, but rather the product of the $H_2$ cloud number density with the range: $n(H_2) R(E)$.
 
 ![proton range calculation from Padovani's L(E)](out/rangePadovani.png)
+
+## Steps 2 and 3: Contour plot of $n(H_2) [R(E_0)-R(E)]$ and extract contour
+We next make a contour plot of the range difference $n(H_2)\left[R(E_0)-R(E)\right]$. A single contour of that plot represents a fixed $N(H_2)$ column density, and that curve tells us the mapping between $E_0$ and $E$ (for a given column density $N(H_2)$. The plot at left is the contour plot. One contour line is shown in red. That specific contour is "extracted" as a single plot (at right).
+
+!["range" contours](out/NH2Contours.png)
+
+## Step 4: Fit function $E_0(E)$ to the extracted contour
+TBD
+
+## Step 5: Compute $j(E,N)$ given $j(E_0,0)$ and $L(E)$
+TBD
+
+## To Do: 
+There are several outstanding issues.
++ how do we handle $n(H_2)$? It's not given. Do we even need to know it?
++ What is $N_0$ in the fitting function $E_0(E)$? Is it a fit parameter or some fundamental constant? Padovani does not explain.
++ Fitting of E_0(E) currently fails. If we don't care about the fit parameter values for a physical model, can't we just use some spline interpolation (like Savitzky-Golay)?
+
+
