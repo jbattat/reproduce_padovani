@@ -31,9 +31,15 @@ I used WebPlotDigitizer to pull data from Padovani Figures 5 (proton spectra) an
 ![cr proton spectra and L(E) for protons and electrons](out/spectraAndEnergyLossFunctions.png)
 
 ## Step 1: Compute R(E)
+### Step 1a: Validate against NIST PSTAR
 I integrate $dE'/L(E')$ to find the particle range. I tested my approach using the NIST PSTAR data (which provides $dE/dx$ and range). I find good agreement between the PSTAR range and the range I calculate from $dE/dx$, except for a discrepancy at low proton energy (below 10 keV). The plots below show (left) the NIST PSTAR stopping ($dE/dx$ in units of MeV $cm^2$/g) as well as the Padovani energy loss function $L(E)$ scaled by an arbitrary amount (chosen by eye) to match the NIST curve. Note: $L(E)$ ("energy loss function") and $dE/dx$ ("stopping power") are related by factors of mass density and number density. See e.g. Eqn. 18 of Padovani: $L(E) = -\frac{1}{n(H_2)}\left(\frac{dE}{dx}\right)$.
 I thought that the discrepancy between my calculated range and the NIST PSTAR range might be due to a resolution effect (numerical integration was too coarse), so I increased the number of data points in the integration (reduced the step size $dE$) from 1,000 to 100,000, but the range did not change. So something else is going on... Put that on the back-burner for now.
 
 Also, notice that the NIST PSTAR stopping power differs in shape from Padovani's $L(E)$ at high proton energy (above 1 GeV). Up there, pion production matters. Padovani includes it in his $L(E)$, but presumably this energy loss pathway is not included in the PSTAR data... (though I don't know why it wouldn't be...)
 
 ![proton range calculation compared with NIST PSTAR range](out/stoppingAndRange.png)
+
+### Step 1b: Compute range from Padovani's $L(E)$
+Now that I (mostly) trust my numerical integration code that computes $R(E)$ from $L(E)$, I apply it to Padovani's $L(E)$. The plot below shows the result, along with the NIST PSTAR range (scaled arbitrarily for good by-eye-agreement). Remember that $L(E)$ from Padovani has units of $10^{-16} \mbox{eV cm}^2$, so the integral of $dE/L(E)$ has units of $cm^{-2}$. It's not a physical range, but rather the product of the $H_2$ cloud number density with the range: $n(H_2) R(E)$.
+
+![proton range calculation from Padovani's L(E)](out/rangePadovani.png)
