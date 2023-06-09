@@ -1,9 +1,9 @@
 # reproduce_padovani
 Reproducing the calculations in Padovani et al. A&amp;A 2009
 Padovani et al, Cosmic-ray ionization of molecular clouds
-`https://doi.org/10.1051/0004-6361/200911794`
+https://doi.org/10.1051/0004-6361/200911794
 
-In our manuscript, we need to "degrade" the cosmic ray spectrum as the CRs pass through a molecular cloud. Padovani provides a method for this (actually, the approach is taken from Takayanagi, 1973). For simplicity, let’s assume that all CRs are protons, and that the cloud is made entirely of H2.
+In our manuscript, we need to "degrade" the cosmic ray spectrum as the CRs pass through a molecular cloud. Padovani provides a method for this (actually, the approach is taken from [Takayanagi, 1973](https://ui.adsabs.harvard.edu/abs/1973PASJ...25..327T/)). For simplicity, let’s assume that all CRs are protons, and that the cloud is made entirely of molecular hydrogen, $H_2$.
 
 + $j(E,N)$ 		Degraded CR spectrum after traversing column density $N(H_2)$
 + $j(E_0, 0)$		Starting spectrum incident on $H_2$ cloud (so $N(H_2)=0$)
@@ -11,7 +11,7 @@ In our manuscript, we need to "degrade" the cosmic ray spectrum as the CRs pass 
 + $R(E)$		Range of proton of energy $E = \frac{1}{n(H_2)} \int_0^E \frac{dE’}{L(E’)}$ (see Padovani Eqn. 22)
 
 The key idea is that in the continuous slowing down approximation, and assuming conservation of CRs, we have $j(E,N) dE = j(E_0,0) dE_0$, and this gives: $j(E,N) = j(E_0,0)\frac{L(E_0)}{L(E)}$.
-In other words, if we know the loss function and the starting spectrum, we can compute the degraded spectrum. But first we need to know what energy E0 will end up “degraded” to energy E. This mapping (which is 1-to-1) depends on N(H2), the column density of $H_2$. The sequence of calculation is then:
+In other words, if we know (1) the loss function (2) the starting spectrum and (3) the mapping from $E_0$ to $E$, which depends on $N(H_2)$, then we can compute the degraded spectrum. The "hard" part is computing which energy $E_0$ will end up "degraded" to energy $E$. This mapping (which is 1-to-1) depends on $N(H_2)$, the column density of $H_2$. The sequence of calculation is then:
 
 0. Get the raw spectra $j(E_0,0)$ as well as the energy loss function $L(E)$.   
     Here, we use two raw spectra `W98` and `M02`. Padovani provides $L(E)$ from 0.1 eV to 100 GeV (!).
