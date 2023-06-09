@@ -50,10 +50,13 @@ We next make a contour plot of the range difference $n(H_2)\left[R(E_0)-R(E)\rig
 !["range" contours](out/NH2Contours.png)
 
 ## Step 4: Fit function $E_0(E)$ to the extracted contour
-TBD
+Ran into some technical issues when fitting the function from Padovani Eqn. 26... So for now I am just interpolating instead of fitting. 
 
 ## Step 5: Compute $j(E,N)$ given $j(E_0,0)$ and $L(E)$
-TBD
+I now have a first-pass at this -- see below. Clearly there is an issue that I don't have the full set of initial energies available. This arises, I think, because I am using linearly spaced values for $E$ and $E_0$ when computing the range (contour plot). I may be able to fix this by using `logspace` instead of `linspace` when creating the meshgrid. Anyway, even without the inclusion of the low energies, I have a "degraded spectrum" $j(E, N)$ that looks believable. I computed it for $N(H_2) = 4\times 10^{25}\mbox{ cm}^-2$. The figure at left is my calculation. The figure at right is Figure 5 from Padovani's paper.
+
+![Degraded spectrum relative to input W98 spectrum](out/spectrumOriginalAndDegraded.png)
+<img src="data/padovani_Figure_9_spectrum_initial_and_degraded_W98.png" alt="Same, but from Padovani paper, Figure 9" height="300px">
 
 ## To Do: 
 There are several outstanding issues.
