@@ -1,7 +1,7 @@
 # reproduce_padovani
 Reproducing the calculations in Padovani et al. A&amp;A 2009
 Padovani et al, Cosmic-ray ionization of molecular clouds
-`https://doi.org/10.1051/0004-6361/200911794`
+https://doi.org/10.1051/0004-6361/200911794
 
 In our manuscript, we need to "degrade" the cosmic ray spectrum as the CRs pass through a molecular cloud. Padovani provides a method for this (actually, the approach is taken from Takayanagi, 1973). For simplicity, let’s assume that all CRs are protons, and that the cloud is made entirely of H2.
 
