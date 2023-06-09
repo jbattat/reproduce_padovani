@@ -3,7 +3,7 @@ Reproducing the calculations in Padovani et al. A&amp;A 2009
 Padovani et al, Cosmic-ray ionization of molecular clouds
 https://doi.org/10.1051/0004-6361/200911794
 
-In our manuscript, we need to "degrade" the cosmic ray spectrum as the CRs pass through a molecular cloud. Padovani provides a method for this (actually, the approach is taken from Takayanagi, 1973). For simplicity, let’s assume that all CRs are protons, and that the cloud is made entirely of H2.
+In our manuscript, we need to "degrade" the cosmic ray spectrum as the CRs pass through a molecular cloud. Padovani provides a method for this (actually, the approach is taken from [Takayanagi, 1973](https://ui.adsabs.harvard.edu/abs/1973PASJ...25..327T/). For simplicity, let’s assume that all CRs are protons, and that the cloud is made entirely of H2.
 
 + $j(E,N)$ 		Degraded CR spectrum after traversing column density $N(H_2)$
 + $j(E_0, 0)$		Starting spectrum incident on $H_2$ cloud (so $N(H_2)=0$)
