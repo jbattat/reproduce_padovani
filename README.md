@@ -58,7 +58,7 @@ TBD
 ## To Do: 
 There are several outstanding issues.
 + we lose low energy data during the analysis... need to update the WebPlotDigitize results to go all the way down to 0.1 eV (for both $j(E_0,0)$ and $L(E)$ ).
-+ + how do we handle $n(H_2)$? It's not given. Do we even need to know it?
++ how do we handle $n(H_2)$? It's not given. Do we even need to know it?
 + What is $N_0$ in the fitting function $E_0(E)$? Is it a fit parameter or some fundamental constant? Padovani does not explain.
 + Fitting of E_0(E) currently fails. If we don't care about the fit parameter values for a physical model, can't we just use some spline interpolation?
 
