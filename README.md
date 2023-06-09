@@ -40,6 +40,6 @@ Also, notice that the NIST PSTAR stopping power differs in shape from Padovani's
 ![proton range calculation compared with NIST PSTAR range](out/stoppingAndRange.png)
 
 ### Step 1b: Compute range from Padovani's $L(E)$
-Now that I (mostly) trust my numerical integration code that computes $R(E)$ from $L(E)$, I apply it to Padovani's $L(E)$. The plot below shows the result, along with the NIST PSTAR range (scaled arbitrarily for good by-eye-agreement). Remember that $L(E)$ from Padovani has units of $10^{-16} \mbox{eV cm}^2$, so the integral of $dE/L(E)$ has units of $cm^{-2}$. It's not a physical range, but rather the product of the $H_2$ cloud number density with the range: $n(H_2) R(E)$.
+Now that I (mostly) trust my numerical integration code that computes $R(E)$ from $L(E)$, I apply it to Padovani's $L(E)$. The plot below shows the result, along with the NIST PSTAR range (scaled arbitrarily for good by-eye-agreement). Remember that $L(E)$ from Padovani has units of $10^{-16} \mbox{eV cm}^2$, so the integral of $dE/L(E)$ has units of $10^{-16} cm^{-2}$. It's not a physical range, but rather the product of the $H_2$ cloud number density with the range: $n(H_2) R(E)$.
 
 ![proton range calculation from Padovani's L(E)](out/rangePadovani.png)
