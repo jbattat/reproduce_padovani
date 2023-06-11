@@ -53,9 +53,12 @@ We next make a contour plot of the range difference $n(H_2)\left[R(E_0)-R(E)\rig
 Ran into some technical issues when fitting the function from Padovani Eqn. 26... So for now I am just interpolating instead of fitting. 
 
 ## Step 5: Compute $j(E,N)$ given $j(E_0,0)$ and $L(E)$
-I now have a first-pass at this -- see below. Clearly there is an issue that I don't have the full set of initial energies available. This arises, I think, because I am using linearly spaced values for $E$ and $E_0$ when computing the range (contour plot). I may be able to fix this by using `logspace` instead of `linspace` when creating the meshgrid. Anyway, even without the inclusion of the low energies, I have a "degraded spectrum" $j(E, N)$ that looks believable. I computed it for $N(H_2) = 4\times 10^{25}\mbox{ cm}^-2$. The figure at left is my calculation. The figure at right is Figure 5 from Padovani's paper.
+The plot below (left) shows my calculated degraded spectrum $j(E,N)$ for $N(H_2)=10^{24} \mbox{ cm}^{-2}$ (solid black line). The input spectrum (W98) is the dashed black line. The red dotted line shows Padovani's calculated degraded spectrum. My calculation agrees very closely with his. The figure at right is Figure 9 from Padovani's paper showing degraded W98 spectra for a range of values of $N(H_2)$. 
 
-![Degraded spectrum relative to input W98 spectrum](out/spectrumOriginalAndDegraded.png)
+<!-- I now have a first-pass at this -- see below. Clearly there is an issue that I don't have the full set of initial energies available. This arises, I think, because I am using linearly spaced values for $E$ and $E_0$ when computing the range (contour plot). I may be able to fix this by using `logspace` instead of `linspace` when creating the meshgrid. Anyway, even without the inclusion of the low energies, I have a "degraded spectrum" $j(E, N)$ that looks believable. I computed it for $N(H_2) = 4\times 10^{25}\mbox{ cm}^-2$. -->
+
+<!-- ![Degraded spectrum relative to input W98 spectrum](out/spectrumOriginalAndDegraded.png) -->
+![Degraded spectrum relative to input W98 spectrum](out/W98_degraded_1e24.png)
 <img src="data/padovani_Figure_9_spectrum_initial_and_degraded_W98.png" alt="Same, but from Padovani paper, Figure 9" height="300px">
 
 ## To Do: 
