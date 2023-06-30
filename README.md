@@ -20,13 +20,12 @@ In other words, if we know (1) the loss function (2) the starting spectrum and (
 2. Compute the column density for each $E$, $E_0$ pair. Make a contour plot of $N(H_2)$ vs. $E$ and $E_0$.
 3. Extract a single contour (corresponding to a single value of $N(H_2)$) and plot it. This gives a plot of $E_0$ vs. $E$.
 4. Fit a function to $E_0$ vs. $E$ so that for any given value of $E$, we can determine what the starting energy $E_0$ would be (for that specific column density $N(H_2)$).  
-Padovani recommends the following function:  $E_0(E,N) = (cE^b + \frac{N}{N_0})^{1/b}$.  (See Eqn. 26).  
-**Q: $c$ and $b$ are fit parameters. What is $N_0$???**
+Padovani recommends the following function:  $E_0(E,N) = (cE^b + \frac{N}{N_0})^{1/b}$.  (See Eqn. 26) where $c$, $b$ and $N_0$ are all fit parameters.
 5. Now that you know the $E_0 \leftrightarrow E$ mapping, you can compute $j(E,N)$.
 
 I’ve started working through this process. See `cr_spectrum.ipynb`.
 
-## Step 0: Get $j(E_0,0$ and $L(E)$
+## Step 0: Get $j(E_0,0)$ and $L(E)$
 I used WebPlotDigitizer to pull data from Padovani Figures 5 (proton spectra) and 7 (energy loss functions $L(E)$):
 ![cr proton spectra and L(E) for protons and electrons](out/spectraAndEnergyLossFunctions.png)
 
@@ -68,10 +67,10 @@ The plot below (left) shows my calculated degraded spectrum $j(E,N)$ for $N(H_2)
 
 ## To Do: 
 There are several outstanding issues.
-+ we lose low energy data during the analysis... need to update the WebPlotDigitize results to go all the way down to 0.1 eV (for both $j(E_0,0)$ and $L(E)$ ).
-+ how do we handle $n(H_2)$? It's not given. Do we even need to know it?
-+ What is $N_0$ in the fitting function $E_0(E)$? Is it a fit parameter or some fundamental constant? Padovani does not explain.
++ ~~We lose low energy data during the analysis... need to update the WebPlotDigitize results to go all the way down to 0.1 eV (for both $j(E_0,0)$ and $L(E)$ ).~~
++ ~~How do we handle $n(H_2)$? It's not given. Do we even need to know it?~~
 + Fitting of E_0(E) currently fails. If we don't care about the fit parameter values for a physical model, can't we just use some spline interpolation?
++ Slight disagreement (only at low energy) in tabulated NIST range vs. my calculation of range (from integrating the NIST stopping power).
 
 
 
